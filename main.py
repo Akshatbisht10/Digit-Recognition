@@ -26,14 +26,14 @@ print(loss)
 
 
 
-# for x in range(1,5):
+for x in range(1,5):
     # now we are going to read images it with open cv
-img=cv.imread(f'test.png')[:,:,0]#all of it and 1st and last one
-img=np.invert(np.array([img]))#invert black to white in images so that model wont get confues
-prediction=model.predict(img)
-print("----------------")
-print("The predicted value is : ",np.argmax(prediction))
-print("----------------")
-plt.imshow(img[0],cmap=plt.cm.binary)#change the color in black and white
-plt.show()
+    img=cv.imread(f'{x}.png')[:,:,0]#all of it and 1st and last one
+    img=np.invert(np.array([img]))#invert black to white in images so that model wont get confues
+    prediction=model.predict(img)
+    print("----------------")
+    print("The predicted value is : ",np.argmax(prediction))
+    print("----------------")
+    plt.imshow(img[0],cmap=plt.cm.binary)#change the color in black and white
+    plt.show()
 
